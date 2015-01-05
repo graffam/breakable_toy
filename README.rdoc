@@ -1,12 +1,4 @@
-[![Build Status]
-(https://travis-ci.org/graffam/Breakable_toy.svg?branch=master)]
-(https://travis-ci.org/graffam/Breakable_toy)
-[![Code Climate]
-(https://codeclimate.com/github/graffam/Breakable_toy.png)]
-(https://codeclimate.com/github/graffam/Breakable_toy)
-[![Coverage Status]
-(https://coveralls.io/repos/graffam/Breakable_toy/badge.png)]
-(https://coveralls.io/r/graffam/Breakable_toy)
+[![Build Status](https://travis-ci.org/graffam/Breakable_toy.svg?branch=master)](https://travis-ci.org/graffam/Breakable_toy)[![Code Climate](https://codeclimate.com/github/graffam/Breakable_toy.png)](https://codeclimate.com/github/graffam/Breakable_toy)[![Coverage Status](https://coveralls.io/repos/graffam/Breakable_toy/badge.png)](https://coveralls.io/r/graffam/Breakable_toy)
 
 == README
 

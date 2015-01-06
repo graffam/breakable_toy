@@ -7,4 +7,8 @@ describe Order do
 
   it { should have_valid(:needed_by).when("2015-01-02") }
   it { should_not have_valid(:needed_by).when(*blank_values) }
+#### Test Associations ####
+  it { should belong_to :user }
+  it { should have_many :kit_orders}
+  it { should have_many(:kits).through(:kit_orders)}
 end

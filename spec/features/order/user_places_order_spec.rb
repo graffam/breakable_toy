@@ -13,13 +13,13 @@ feature 'placing order', %Q{
 # [] After placing the order, i'm brought to the order details
 
   context "User is signed in" do
-    before(:all) do
-      @user = FactoryGirl.create(:user)
+    before :each do
+      user = FactoryGirl.create(:user)
 
       visit new_user_session_path
 
-      fill_in 'Email', with: @user.email
-      fill_in 'Password', with: @user.password
+      fill_in 'Email', with: user.email
+      fill_in 'Password', with: user.password
 
       click_button 'Log in'
     end

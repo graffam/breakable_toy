@@ -1,0 +1,21 @@
+<% if @kits %>
+    <%= form_for(@order) do |f| %>
+          <%= f.fields_for :kit_orders, @order.kit_orders do |ff| %>
+            <%= ff.label :name, ff.object.name %>
+            <%= ff.number_field :amount, in: 0..10 %>
+          <% end %>
+      <%= f.label :comment %>
+      <%= f.text_field :comment %>
+
+      <%= f.label :needed_by %>
+      <%= f.date_field :needed_by %>
+
+      <%= f.submit "Submit" %>
+    <% end %>
+<% else %>
+<h1>Pick a Machine</h1>
+  <%= form_tag(new_order_path, method: "get") do %>
+    <%= collection_select(:machine, :id, Machine.all, :id, :name) %>
+    <%= submit_tag "Submit" %>
+  <% end %>
+<% end %>

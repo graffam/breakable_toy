@@ -27,13 +27,18 @@ feature 'placing order', %Q{
     scenario "User places an order" do
       visit new_order_path
 
-      select("HSX", from: "machine")
+      select("HSX", from: "machine_id")
+
+      click_button "Submit"
+
+      save_and_open_page
       fill_in "Comment", with: "Need this asap"
-      fill_in "58c", with: "1"
+      fill_in "order[kit_orders_attributes][0][amount]", with: "1"
+
       click_button "Submit"
 
       expect(page).to have_content("Order Placed")
-      expect(page).to have_content("58c 1")
+      expect(page).to have_content("168c 1")
       expect(page).to have_content("Need this asap")
     end
   end

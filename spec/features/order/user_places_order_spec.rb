@@ -34,7 +34,6 @@ feature 'placing order', %Q{
       fill_in "Comment", with: "Need this asap"
       fill_in "order[kit_orders_attributes][0][amount]", with: "1"
       fill_in "order_needed_by", with:"07/10/2015"
-
       click_button "Submit"
 
       expect(page).to have_content("Order Created Successfully")

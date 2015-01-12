@@ -26,7 +26,7 @@ feature 'placing order', %Q{
 
     scenario "User places an order" do
       visit new_order_path
-      save_and_open_page
+      
       select("HSX", from: "machine_id")
 
       click_button "Submit"

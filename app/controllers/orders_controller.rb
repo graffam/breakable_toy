@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   def new
+    authenticate_user!
     @order = Order.new
     if params["machine"]
       @machine = Machine.find_by(id: params["machine"]["id"])
@@ -11,6 +12,7 @@ class OrdersController < ApplicationController
   end
 
   def create
+    authenticate_user!
     @order = Order.new(order_params)
     @order.user_id = current_user.id
     if @order.save

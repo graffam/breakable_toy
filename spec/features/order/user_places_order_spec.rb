@@ -7,7 +7,7 @@ feature 'placing order', %Q{
   } do
 # Acceptance Criteria:
 # [X] Be able to place an order for reagents
-# [] I Cannot order reagents for the wrong machine
+# [X] I Cannot order reagents for the wrong machine
 # [] I must be logged in to order
 # [X] I should see a message saying my order has been placed
 # [] After placing the order, i'm brought to the order details
@@ -41,5 +41,11 @@ feature 'placing order', %Q{
       expect(page).to have_content("168c: 1")
       expect(page).to have_content("Need this asap")
     end
+  end
+
+  scenario "visitor attempts to make an order" do
+    visit new_order_path
+
+    expect(page).to have_content("You need to sign in")
   end
 end

@@ -50,5 +50,11 @@ feature 'viewing an order', %Q{
         expect(page).to have_content(kit_order.amount)
       end
     end
+
+    scenario "visitor attempts to see all of the orders" do
+      visit orders_path
+
+      expect(page).to have_content("You need to sign in")
+    end
   end
 end

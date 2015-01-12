@@ -27,3 +27,13 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+History:
+
+January 11, 2015:
+* Added tests for creation and viewing orders
+* Added reagent ordering and viewing
+* Added User authentication requirements for viewing and placing orders
+* Added model tests for orders
+
+January 12, 2015:
+* Added history to README

@@ -8,9 +8,9 @@ feature 'placing order', %Q{
 # Acceptance Criteria:
 # [X] Be able to place an order for reagents
 # [X] I Cannot order reagents for the wrong machine
-# [] I must be logged in to order
+# [X] I must be logged in to order
 # [X] I should see a message saying my order has been placed
-# [] After placing the order, i'm brought to the order details
+# [X] After placing the order, i'm brought to the order details
 
   context "User is signed in" do
     before :each do

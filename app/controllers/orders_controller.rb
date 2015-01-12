@@ -23,11 +23,13 @@ class OrdersController < ApplicationController
   end
 
   def show
+    authenticate_user!
     @order = Order.find(params["id"])
     @kit_orders = @order.kit_orders
   end
 
   def index
+    authenticate_user!
     @orders = Order.all
   end
 

@@ -27,6 +27,10 @@ class OrdersController < ApplicationController
     @kit_orders = @order.kit_orders
   end
 
+  def index
+    @orders = Order.all
+  end
+
   private
 
   def order_params

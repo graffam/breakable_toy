@@ -1,0 +1,12 @@
+<ul>
+  <% @orders.each do |order| %>
+    <li>
+      <%= link_to "Details", order_path(order), id: order.id %>
+      <%= order.machine.name %>
+      <%= order.status %>
+      <%= order.needed_by%>
+      <%= order.created_at %>
+      <%= order.user.first_name %>
+    </li>
+  <% end %>
+</ul>

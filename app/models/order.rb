@@ -1,6 +1,7 @@
 class Order < ActiveRecord::Base
   validates :user_id,
             :needed_by,
+            :machine_id,
             presence: true
 
   belongs_to :user

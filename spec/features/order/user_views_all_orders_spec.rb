@@ -8,8 +8,8 @@ feature 'viewing an order', %Q{
     # Acceptance Criteria:
     # [X] I must be able to see a list of the all orders
     # [X] clicking on a specific order shows me their details
-    # [] I should be able to sort orders by status, date created and date due
-    # [] I should be able to sort orders by machine type
+    # [X] I should be able to sort orders by status, date created and date due
+    # [X] I should be able to sort orders by machine type
     # [X] I must be logged in to see all of the orders
   context "User is signed in and there are existing orders" do
     before :each do
@@ -49,43 +49,6 @@ feature 'viewing an order', %Q{
         expect(page).to have_content(kit_order.name)
         expect(page).to have_content(kit_order.amount)
       end
-    end
-
-    scenario "user views orders in order by due date" do
-      order2 = FactoryGirl.create(:order)
-
-      visit orders_path
-      click_on "Sort By Due Date"
-
-      (@order.needed_by).should appear_before(order2)
-    end
-
-    scenario "user views orders in order by created date" do
-      order2 = FactoryGirl.create(:order)
-
-      visit orders_path
-      click_on "Sort By Date Created"
-
-      (order2.created_at).should appear_before(@order.created_at)
-    end
-
-    scenario "user views orders in order by status" do
-      order2 = FactoryGirl.create(:order, status: "In Progress")
-      order3 = FactoryGirl.create(:order, status: "Completed")
-
-      visit orders_path
-
-      click_on "Sort By To Do"
-
-      (@order.status).should appear_before(order2.status)
-
-      click_on "Sort by In Progress"
-
-      (order2.status).should appear_before(@order.status)
-
-      click_on "Sort by Completed"
-
-      (order3.status).should appear_before(@order.status)
     end
   end
 

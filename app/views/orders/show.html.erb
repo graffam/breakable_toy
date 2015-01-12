@@ -1,0 +1,16 @@
+
+<h1>Order Details:</h1>
+<h3>Status: <%= @order.status %></h3>
+<ul>
+  <li>Machine: <%= @order.machine.name %></li>
+  <li>Needed By: <%= @order.needed_by %></li>
+  <li>Placed By: <%= @order.user.first_name %></li>
+  <li>Comments: <%= @order.comment %><li>
+</ul>
+
+<h3>Kits:</h3>
+<ul>
+  <% @kit_orders.each do |kit_order| %>
+    <li><%= kit_order.name %>: <%= kit_order.amount %></li>
+  <% end %>
+</ul>

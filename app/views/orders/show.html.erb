@@ -1,16 +1,29 @@
-
-<h1>Order Details:</h1>
-<h3>Status: <%= @order.status %></h3>
-<ul>
-  <li>Machine: <%= @order.machine.name %></li>
-  <li>Needed By: <%= @order.needed_by %></li>
-  <li>Placed By: <%= @order.user.first_name %></li>
-  <li>Comments: <%= @order.comment %><li>
-</ul>
-
-<h3>Kits:</h3>
-<ul>
-  <% @kit_orders.each do |kit_order| %>
-    <li><%= kit_order.name %>: <%= kit_order.amount %></li>
-  <% end %>
-</ul>
+<div class="row">
+  <div class="small-10 small-centered columns">
+    <h3>Status: <%= @order.status %></h3>
+    <ul class="pricing-table">
+      <li class="title"> Order Details</li>
+      <li class="price"><%= @order.machine.name %></li>
+      <li class="description">Comments: <%= @order.comment %><li>
+      <li class="bullet-item">Needed By: <%= @order.needed_by %></li>
+      <li class="bullet-item">Placed By: <%= @order.user.first_name %></li>
+      <li class="cta-button"><%= link_to "Update Status", edit_order_path(@order), class: "button round" %></li>
+    </ul>
+    <table class="tablesorter">
+      <thead>
+        <tr>
+          <th width="200">Kit</th>
+          <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @kit_orders.each do |kit_order| %>
+        <tr>
+          <td><%= kit_order.name %></td>
+          <td><%= kit_order.amount %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

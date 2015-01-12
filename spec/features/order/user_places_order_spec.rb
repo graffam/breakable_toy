@@ -9,6 +9,7 @@ feature 'placing order', %Q{
 # [X] Be able to place an order for reagents
 # [X] I Cannot order reagents for the wrong machine
 # [X] I must be logged in to order
+# [] I must specify a cost object
 # [X] I should see a message saying my order has been placed
 # [X] After placing the order, i'm brought to the order details
 
@@ -26,10 +27,12 @@ feature 'placing order', %Q{
 
     scenario "User places an order" do
       visit new_order_path
-      
+
       select("HSX", from: "machine_id")
 
       click_button "Submit"
+
+      select("Custom Sequencing", from: "cost_object")
 
       fill_in "Comment", with: "Need this asap"
       fill_in "order[kit_orders_attributes][0][amount]", with: "1"

@@ -51,6 +51,10 @@ class OrdersController < ApplicationController
     @orders = Order.all
   end
 
+  def edit
+
+  end
+
   private
 
   def order_params

@@ -53,7 +53,7 @@ feature 'placing order', %Q{
       click_button "Submit"
 
       click_button "Submit"
-      save_and_open_page
+      
       expect(page).to have_content("Needed by can't be blank")
       expect(page).to have_content("Fill in atleast one kit to be ordered")
     end

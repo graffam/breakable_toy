@@ -5,7 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
+puts "Seeding Database"
 hs2500 = Machine.find_or_create_by(name: 'HS2500')
 hs2500_kits = %w(58c 66c 160c 168c 202c 210c 218c 266c 316c 508c 516c cBotV1)
 hs2500_kits.each do |kit_name|

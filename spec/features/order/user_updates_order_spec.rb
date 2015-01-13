@@ -29,12 +29,25 @@ feature 'Updating an Order', %Q{
         visit order_path(@order)
 
         click_on("Update Status")
-        save_and_open_page
+
         expect(page).to have_content("Lot #'s")
         expect(page).to have_content(@order.machine.name)
         expect(page).to have_content(@order.needed_by)
         expect(page).to have_content(@order.user.first_name)
         expect(page).to have_content(@order.comment)
+      end
+
+      scenario "user updates an order" do
+        visit edit_order_path(@order)
+
+        fill_in "order_kit_orders_attributes_0_lot_numbers", with: "Test Text"
+
+        select("In Progress", from: "order_status")
+
+        click_on "Update"
+
+        expect(page).to have_content("Test Text")
+        expect(page).to have_content("Status: In Progress")
       end
     end
 

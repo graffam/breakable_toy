@@ -56,6 +56,17 @@ class OrdersController < ApplicationController
     @kit_orders = @order.kit_orders
   end
 
+  def update
+    @order = Order.find(params[:id])
+    params["order"]["kit_orders_attributes"].each_value do |values|
+      kit_order = KitOrder.find_by(id: values["id"])
+      kit_order.lot_numbers = values["lot_numbers"]
+      kit_order.save
+    end
+    @order.status = params["order"]["status"]
+    @order.save
+    redirect_to order_path(@order)
+  end
   private
 
   def order_params

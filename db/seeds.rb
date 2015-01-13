@@ -33,7 +33,7 @@ hs2000v3_kits = %w(
   Rehyb_R1Kit
   IndexPrimerBoxR1&PER2)
 hs2000v3_kits.each do |kit_name|
-  kit = Kit.find_or_create_by(name:kit_name)
+  kit = Kit.find_or_create_by(name: kit_name)
   MachineKitCompatibility.find_or_create_by(machine: hs2000v3, kit: kit)
 end
 

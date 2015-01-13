@@ -52,7 +52,8 @@ class OrdersController < ApplicationController
   end
 
   def edit
-
+    @order = Order.find(params[:id])
+    @kit_orders = @order.kit_orders
   end
 
   private

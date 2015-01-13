@@ -36,3 +36,6 @@ January 12, 2015:
 * Added basic CSS
 
 January 13, 2015:
+* Added error messages for creating an order
+* Added Updating Orders
+* Added lot numbers to kit_orders

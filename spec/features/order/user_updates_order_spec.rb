@@ -29,8 +29,8 @@ feature 'Updating an Order', %Q{
         visit order_path(@order)
 
         click_on("Update Status")
-
-        expect(page).to have_content("Lot #'s: ")
+        save_and_open_page
+        expect(page).to have_content("Lot #'s")
         expect(page).to have_content(@order.machine.name)
         expect(page).to have_content(@order.needed_by)
         expect(page).to have_content(@order.user.first_name)

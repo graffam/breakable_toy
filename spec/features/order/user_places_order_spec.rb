@@ -5,13 +5,13 @@ feature "placing order", %{
   I want to place an order for reagent kits
   So that I can receive reagent kits
   } do
-# Acceptance Criteria:
-# [X] Be able to place an order for reagents
-# [X] I Cannot order reagents for the wrong machine
-# [X] I must be logged in to order
-# [X] I must specify a cost object
-# [X] I should see a message saying my order has been placed
-# [X] After placing the order, i'm brought to the order details
+  # Acceptance Criteria:
+  # [X] Be able to place an order for reagents
+  # [X] I Cannot order reagents for the wrong machine
+  # [X] I must be logged in to order
+  # [X] I must specify a cost object
+  # [X] I should see a message saying my order has been placed
+  # [X] After placing the order, i'm brought to the order details
 
   context "User is signed in" do
     before :each do
@@ -36,7 +36,7 @@ feature "placing order", %{
 
       fill_in "Comment", with: "Need this asap"
       fill_in "order[kit_orders_attributes][0][amount]", with: "1"
-      fill_in "order_needed_by", with:"07/10/2015"
+      fill_in "order_needed_by", with: "07/10/2015"
       click_button "Submit"
 
       expect(page).to have_content("Order Created Successfully")

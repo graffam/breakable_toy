@@ -16,7 +16,7 @@ end
 next_seq = Machine.find_or_create_by(name: "NextSeq")
 next_seq_kits = %w(NEXTSEQ75 NEXTSEQ150 NEXSEQ300)
 next_seq_kits.each do |kit_name|
-  kit = Kit.find_or_create_by(name:kit_name)
+  kit = Kit.find_or_create_by(name: kit_name)
   MachineKitCompatibility.find_or_create_by(machine: next_seq, kit: kit)
 end
 

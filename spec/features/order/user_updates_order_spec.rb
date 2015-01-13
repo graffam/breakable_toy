@@ -1,6 +1,6 @@
-require 'rails_helper'
+require "rails_helper"
 
-feature 'Updating an Order', %Q{
+feature "Updating an Order", %{
   As a user
   I want to be able to update an order status and reagent lots
   So that I can inform the rest of the team of the status of their order
@@ -18,10 +18,10 @@ feature 'Updating an Order', %Q{
         FactoryGirl.create(:kit_order, order_id: @order.id)
         visit new_user_session_path
 
-        fill_in 'Email', with: user.email
-        fill_in 'Password', with: user.password
+        fill_in "Email", with: user.email
+        fill_in "Password", with: user.password
 
-        click_button 'Log in'
+        click_button "Log in"
       end
 
       scenario "user views the update page" do

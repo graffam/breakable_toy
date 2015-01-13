@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'viewing an order', %Q{
+feature 'viewing an order', %{
   As a user
   I want to view an order for reagent kits
   So I know what orders I need to work on
@@ -19,10 +19,10 @@ feature 'viewing an order', %Q{
       FactoryGirl.create(:kit_order, order_id: @order.id)
       visit new_user_session_path
 
-      fill_in 'Email', with: user.email
-      fill_in 'Password', with: user.password
+      fill_in "Email", with: user.email
+      fill_in "Password", with: user.password
 
-      click_button 'Log in'
+      click_button "Log in"
     end
 
     scenario "user views the orders page" do

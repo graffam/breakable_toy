@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
   def new
     authenticate_user!
+    @errors = []
     @order = Order.new
     if params["machine"]
       @machine = Machine.find_by(id: params["machine"]["id"])
@@ -13,12 +14,29 @@ class OrdersController < ApplicationController
 
   def create
     authenticate_user!
-    @order = Order.new(order_params)
-    @order.user_id = current_user.id
-    if @order.save
-      KitOrder.make_items(params[:order][:kit_orders_attributes], @order)
-      flash[:notice] = "Order Created Successfully"
-      redirect_to order_path(@order)
+    kit_orders = params[:order][:kit_orders_attributes]
+    count = 0
+    kit_orders.each_value do |kit_order|
+      count += kit_order["amount"].to_i
+    end
+    if count > 0
+      @order = Order.new(order_params)
+      @order.user_id = current_user.id
+      if @order.save
+        KitOrder.make_items(params[:order][:kit_orders_attributes], @order)
+        flash[:notice] = "Order Created Successfully"
+        redirect_to order_path(@order)
+      else
+        @errors = @order.errors.full_messages
+        render "new"
+      end
+    else
+      if order_params["comment"] = "" || order_params["needed_by"] = ""
+        @order = Order.create(order_params)
+      end
+      @errors = @order.errors.full_messages
+      @errors << "Fill in atleast one kit to be ordered"
+      render "new"
     end
   end
 

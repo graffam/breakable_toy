@@ -1,8 +1,5 @@
 [![Build Status](https://travis-ci.org/graffam/breakable_toy.svg?branch=master)](https://travis-ci.org/graffam/breakable_toy) [![Code Climate](https://codeclimate.com/github/graffam/breakable_toy.png)](https://codeclimate.com/github/graffam/breakable_toy) [![Coverage Status](https://coveralls.io/repos/graffam/breakable_toy/badge.png)](https://coveralls.io/r/graffam/breakable_toy)
-== README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
 Things you may want to cover:
 
@@ -22,11 +19,7 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
 
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
 History:
 
 January 11, 2015:
@@ -39,3 +32,7 @@ January 12, 2015:
 * Added history to README
 * Moved reagent ordering forms into their own partial
 * Added tabled sorting with table-sort jquery library
+* Added cost objects table
+* Added basic CSS
+
+January 13, 2015:

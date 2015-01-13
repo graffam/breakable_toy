@@ -9,7 +9,7 @@ feature 'placing order', %Q{
 # [X] Be able to place an order for reagents
 # [X] I Cannot order reagents for the wrong machine
 # [X] I must be logged in to order
-# [] I must specify a cost object
+# [X] I must specify a cost object
 # [X] I should see a message saying my order has been placed
 # [X] After placing the order, i'm brought to the order details
 
@@ -38,11 +38,24 @@ feature 'placing order', %Q{
       fill_in "order[kit_orders_attributes][0][amount]", with: "1"
       fill_in "order_needed_by", with:"07/10/2015"
       click_button "Submit"
-      save_and_open_page
+
       expect(page).to have_content("Order Created Successfully")
       expect(page).to have_content("168c")
       expect(page).to have_content("HSX")
       expect(page).to have_content("Need this asap")
+    end
+
+    scenario "User doesn't fill out req'd fields" do
+      visit new_order_path
+
+      select("HSX", from: "machine_id")
+
+      click_button "Submit"
+
+      click_button "Submit"
+      save_and_open_page
+      expect(page).to have_content("Needed by can't be blank")
+      expect(page).to have_content("Fill in atleast one kit to be ordered")
     end
   end
 

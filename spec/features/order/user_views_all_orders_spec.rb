@@ -11,6 +11,7 @@ feature 'viewing an order', %Q{
     # [X] I should be able to sort orders by status, date created and date due
     # [X] I should be able to sort orders by machine type
     # [X] I must be logged in to see all of the orders
+    
   context "User is signed in and there are existing orders" do
     before :each do
       user = FactoryGirl.create(:user)

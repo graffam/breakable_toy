@@ -17,8 +17,7 @@ ActiveRecord::Schema.define(version: 20150112222911) do
   enable_extension "plpgsql"
 
   create_table "cost_objects", force: :cascade do |t|
-    t.string  "name",     null: false
-    t.integer "order_id", null: false
+    t.string "name", null: false
   end
 
   create_table "kit_orders", force: :cascade do |t|

@@ -32,15 +32,16 @@ feature 'placing order', %Q{
 
       click_button "Submit"
 
-      select("Custom Sequencing", from: "cost_object")
+      select("Custom Sequencing", from: "order_cost_object_id")
 
       fill_in "Comment", with: "Need this asap"
       fill_in "order[kit_orders_attributes][0][amount]", with: "1"
       fill_in "order_needed_by", with:"07/10/2015"
       click_button "Submit"
-
+      save_and_open_page
       expect(page).to have_content("Order Created Successfully")
-      expect(page).to have_content("168c: 1")
+      expect(page).to have_content("168c")
+      expect(page).to have_content("HSX")
       expect(page).to have_content("Need this asap")
     end
   end

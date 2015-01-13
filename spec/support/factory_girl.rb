@@ -6,6 +6,7 @@ FactoryGirl.define do
     needed_by "07/10/2015"
     machine_id 1
     comment "Need this asap"
+    cost_object_id 1
 
     user
   end

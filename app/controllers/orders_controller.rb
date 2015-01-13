@@ -36,6 +36,10 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:machine_id, :comment, :needed_by)
+    params.require(:order).permit(
+      :machine_id,
+      :comment,
+      :needed_by,
+      :cost_object_id)
   end
 end

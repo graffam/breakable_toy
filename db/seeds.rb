@@ -34,7 +34,7 @@ hs2000v3_kits.each do |kit_name|
   MachineKitCompatibility.find_or_create_by(machine: hs2000v3, kit: kit)
 end
 
-cost_objects = ["Custom Sequencing", "Core Sequencing", "CRSP"]
+cost_objects = ["Core Sequencing", "Custom Sequencing", "CRSP"]
 cost_objects.each do |cost_object|
   CostObject.find_or_create_by(name: cost_object)
 end

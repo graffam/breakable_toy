@@ -1,6 +1,6 @@
-require 'rails_helper'
+require "rails_helper"
 
-feature 'placing order', %Q{
+feature "placing order", %{
   As a user
   I want to place an order for reagent kits
   So that I can receive reagent kits
@@ -19,10 +19,10 @@ feature 'placing order', %Q{
 
       visit new_user_session_path
 
-      fill_in 'Email', with: user.email
-      fill_in 'Password', with: user.password
+      fill_in "Email", with: user.email
+      fill_in "Password", with: user.password
 
-      click_button 'Log in'
+      click_button "Log in"
     end
 
     scenario "User places an order" do
@@ -53,7 +53,7 @@ feature 'placing order', %Q{
       click_button "Submit"
 
       click_button "Submit"
-      
+
       expect(page).to have_content("Needed by can't be blank")
       expect(page).to have_content("Fill in atleast one kit to be ordered")
     end

@@ -6,4 +6,7 @@ RSpec.describe User, :type => :model do
   it { should_not have_valid(:email).when(*blank_values) }
   it { should_not have_valid(:email).when("fail.com")}
   it { should_not have_valid(:email).when("fail@") }
+
+#### Test Associations ####
+  it { should have_many :orders }
 end

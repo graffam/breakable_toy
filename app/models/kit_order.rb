@@ -1,8 +1,11 @@
 class KitOrder < ActiveRecord::Base
   belongs_to :order
   belongs_to :kit
+
   validates :amount, presence: true
-  validates_numericality_of :amount
+  validates_numericality_of :amount,
+                            :kit_id,
+                            :order_id
 
   ## Prevents empty kit_orders from being created ##
   def self.make_items(kit_orders, order)

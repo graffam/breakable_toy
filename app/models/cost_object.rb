@@ -1,5 +1,5 @@
 class CostObject < ActiveRecord::Base
-  belongs_to :order
+  has_many :orders
 
   validates :name,
             presence: true

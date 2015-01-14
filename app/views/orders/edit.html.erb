@@ -5,8 +5,12 @@
       <li class="title"> Order Details</li>
       <li class="price"><%= @order.machine.name %></li>
       <li class="description">Comments: <%= @order.comment %><li>
-        <li class="bullet-item">Needed By: <%= @order.needed_by %></li>
+      <li class="bullet-item">Needed By: <%= @order.needed_by %></li>
+      <% if @order.user != nil %>
         <li class="bullet-item">Placed By: <%= @order.user.first_name %></li>
+      <% else %>
+        <li>None</li>
+      <% end %>
       </ul>
       <%= form_for(@order) do |f| %>
         <table class="tablesorter">

@@ -12,5 +12,5 @@ describe KitOrder do
 
   #### Test Associations ####
   it { should belong_to :order }
-  it { should belong_to :kit}
+  it { should belong_to :kit }
 end

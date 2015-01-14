@@ -1,0 +1,5 @@
+<h1>Pick a Machine</h1>
+  <%= form_tag(new_order_path, method: "get") do %>
+    <%= collection_select(:machine, :id, Machine.all, :id, :name) %>
+    <%= submit_tag "Submit" %>
+  <% end %>

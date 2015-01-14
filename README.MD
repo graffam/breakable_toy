@@ -1,8 +1,5 @@
 [![Build Status](https://travis-ci.org/graffam/breakable_toy.svg?branch=master)](https://travis-ci.org/graffam/breakable_toy) [![Code Climate](https://codeclimate.com/github/graffam/breakable_toy.png)](https://codeclimate.com/github/graffam/breakable_toy) [![Coverage Status](https://coveralls.io/repos/graffam/breakable_toy/badge.png)](https://coveralls.io/r/graffam/breakable_toy)
-== README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
 Things you may want to cover:
 
@@ -22,8 +19,23 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
 
+History:
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+January 11, 2015:
+* Added tests for creation and viewing orders
+* Added reagent ordering and viewing
+* Added User authentication requirements for viewing and placing orders
+* Added model tests for orders
+
+January 12, 2015:
+* Added history to README
+* Moved reagent ordering forms into their own partial
+* Added tabled sorting with table-sort jquery library
+* Added cost objects table
+* Added basic CSS
+
+January 13, 2015:
+* Added error messages for creating an order
+* Added Updating Orders
+* Added lot numbers to kit_orders

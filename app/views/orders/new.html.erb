@@ -1,0 +1,12 @@
+<% if @errors.any? %>
+  <ul>
+    <% @errors.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+<% if @kits %>
+  <%= render partial: "order", locals: { order: @order, machine: @machine } %>
+<% else %>
+  <%= render "machine" %>
+<% end %>

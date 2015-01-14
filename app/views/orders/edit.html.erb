@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="small-10 small-centered columns">
+    <h3>Status: <%= @order.status %></h3>
+    <ul class="pricing-table">
+      <li class="title"> Order Details</li>
+      <li class="price"><%= @order.machine.name %></li>
+      <li class="description">Comments: <%= @order.comment %><li>
+        <li class="bullet-item">Needed By: <%= @order.needed_by %></li>
+        <li class="bullet-item">Placed By: <%= @order.user.first_name %></li>
+      </ul>
+      <%= form_for(@order) do |f| %>
+        <table class="tablesorter">
+          <thead>
+            <tr>
+              <th width="200">Kit</th>
+              <th>Amount</th>
+              <th>Lot #'s</th>
+            </tr>
+          </thead>
+          <tbody>
+              <%= f.fields_for :kit_orders, @order.kit_orders do |ff| %>
+            <tr>
+              <td><%= ff.label :name, ff.object.name %></td>
+              <td><%= ff.label :amount, ff.object.amount %></td>
+              <td><%= ff.text_area :lot_numbers %></td>
+            </tr>
+              <% end %>
+          </tbody>
+        </table>
+        <%= f.label :status %>
+        <%= f.select(:status, [["In Progress", "In Progress"],["Done", "Done"],["To Do", "To Do"]]) %>
+        <%= f.submit "Update" %>
+      <% end %>
+    </div>
+  </div>

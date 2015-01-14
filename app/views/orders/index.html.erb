@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="small-10 small-centered columns">
+    <table class="tablesorter">
+    <thead>
+      <tr>
+        <th width="200">Machine</th>
+        <th>Status</th>
+        <th width="150">Due Date</th>
+        <th width="150">Date Created</th>
+        <th>Orderd By</th>
+        <th>Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @orders.each do |order| %>
+        <tr>
+          <td><%= order.machine.name %></td>
+          <td><%= order.status %></td>
+          <td><%= order.needed_by%></td>
+          <td><%= order.created_at %></td>
+          <td><%= order.user.first_name %></td>
+          <td><%= link_to "Details", order_path(order), id: order.id %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+</div>

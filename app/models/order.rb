@@ -4,7 +4,7 @@ class Order < ActiveRecord::Base
             :machine_id,
             :cost_object_id,
             presence: true
-            
+
   validates_numericality_of :user_id,
                             :machine_id,
                             :cost_object_id

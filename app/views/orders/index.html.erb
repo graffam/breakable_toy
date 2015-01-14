@@ -4,24 +4,27 @@
     <thead>
       <tr>
         <th width="200">Machine</th>
-        <th>Status</th>
+        <th width="200">Status</th>
         <th width="150">Due Date</th>
         <th width="150">Date Created</th>
-        <th>Orderd By</th>
-        <th>Details</th>
+        <th width="150">Orderd By</th>
+        <th width="150">Details</th>
       </tr>
     </thead>
     <tbody>
+      <% if @orders != nil %>
       <% @orders.each do |order| %>
-        <tr> 
+        <tr>
           <td><%= order.machine.name %></td>
           <td><%= order.status %></td>
           <td><%= order.needed_by%></td>
           <td><%= order.created_at %></td>
           <td><%= order.user.first_name %></td>
-          <td><%= link_to "Details", order_path(order), id: order.id %></td>
+          <td><%= link_to "Details", order_path(order),
+                  class: "button info small", id: order.id %></td>
         </tr>
       <% end %>
+    <% end %>
     </tbody>
   </table>
 </div>

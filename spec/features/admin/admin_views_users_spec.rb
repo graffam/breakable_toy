@@ -37,7 +37,8 @@ feature 'admin views users', %{
       expect(page).to have_content(user.first_name)
       expect(page).to have_content(user.last_name)
       expect(page).to have_content(user.created_at)
-      expect(page).to have_link("Edit User")
+      expect(page).to have_content(user.role)
+      expect(page).to have_link("Back")
     end
   end
 

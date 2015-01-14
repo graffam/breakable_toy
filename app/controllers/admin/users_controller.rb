@@ -9,7 +9,11 @@ module Admin
       @user = User.find(params[:id])
     end
 
-    def edit
+    def destroy
+      @user = User.find(params[:id])
+      @user.destroy
+      flash[:notice] = "User #{@user.email} deleted"
+      redirect_to admin_users_path
     end
   end
 end

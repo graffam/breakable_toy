@@ -1,9 +1,6 @@
 require "rails_helper"
 
-
-require "rails_helper"
-
-feature 'admin user functions', %{
+feature 'admin views users', %{
   As an admin
   I want to be able to see the users
   so that I may better manage my application
@@ -11,7 +8,7 @@ feature 'admin user functions', %{
     # Acceptance Criteria:
     # [X] I must see a list of all the users
     # [X] be able to click on the user to view their details
-    # [] I must have admin rights to view users
+    # [X] I must have admin rights to view users
     # [X] I should be able to sort users by name, date joined, and email
 
   let(:admin) { FactoryGirl.create(:user, role: 'admin') }
@@ -40,7 +37,7 @@ feature 'admin user functions', %{
       expect(page).to have_content(user.first_name)
       expect(page).to have_content(user.last_name)
       expect(page).to have_content(user.created_at)
-      expect(page).to have_button("Edit User")
+      expect(page).to have_link("Edit User")
     end
   end
 

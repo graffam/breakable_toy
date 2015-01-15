@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'homes#index'
+  root 'orders#index'
   devise_for :users
 
   resources :orders, only: [:index, :show, :edit, :update, :create, :new]

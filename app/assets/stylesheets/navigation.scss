@@ -1,0 +1,30 @@
+@import "variables";
+
+.side-nav li {
+  margin-bottom: 0;
+  &:hover {
+    background: $link-hover;
+  }
+}
+
+
+.side-nav li a {
+  font-family: $font-family;
+  color: $font-color;
+  font-size: .9em;
+  text-transform: uppercase;
+  font-weight: 300;
+  letter-spacing: .5px;
+}
+.side-nav li:first-child {
+  border-top: 4px solid $border-color;
+}
+
+.side-nav li a:not(.button):hover, .side-nav li a:not(.button):focus{
+  font-family: $font-family;
+  color: black;
+}
+.side-nav li a:not(.button){
+  font-family: $font-family;
+  color: black;
+}

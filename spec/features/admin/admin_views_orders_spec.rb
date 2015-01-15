@@ -1,17 +1,17 @@
 require "rails_helper"
 
-feature 'admin views orders', %{
+feature "admin views orders", %{
   As an admin
   I want to be able to see the orders
   so that I may manage the orders
   } do
-    # Acceptance Criteria:
-    # [X] I must see a list of all the orders
-    # [X] be able to click on the order to view their details
-    # [X] I must have admin rights to view the orders admin page
-    # [X] I should be able to sort orders by machine, date created, dated needed
-    # [X] I should be able to delete an order from the index page
-  let(:admin) { FactoryGirl.create(:user, role: 'admin') }
+  # Acceptance Criteria:
+  # [X] I must see a list of all the orders
+  # [X] be able to click on the order to view their details
+  # [X] I must have admin rights to view the orders admin page
+  # [X] I should be able to sort orders by machine, date created, dated needed
+  # [X] I should be able to delete an order from the index page
+  let(:admin) { FactoryGirl.create(:user, role: "admin") }
 
   context "There are orders in the database" do
     before(:each) do

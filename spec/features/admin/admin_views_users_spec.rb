@@ -1,17 +1,17 @@
 require "rails_helper"
 
-feature 'admin views users', %{
+feature "admin views users", %{
   As an admin
   I want to be able to see the users
   so that I may better manage my application
   } do
-    # Acceptance Criteria:
-    # [X] I must see a list of all the users
-    # [X] be able to click on the user to view their details
-    # [X] I must have admin rights to view users
-    # [X] I should be able to sort users by name, date joined, and email
+  # Acceptance Criteria:
+  # [X] I must see a list of all the users
+  # [X] be able to click on the user to view their details
+  # [X] I must have admin rights to view users
+  # [X] I should be able to sort users by name, date joined, and email
 
-  let(:admin) { FactoryGirl.create(:user, role: 'admin') }
+  let(:admin) { FactoryGirl.create(:user, role: "admin") }
   let!(:user) { FactoryGirl.create(:user) }
 
   context "admin is signed in" do

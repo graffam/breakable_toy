@@ -1,16 +1,16 @@
 require "rails_helper"
 
-feature 'admin updates a user', %{
+feature "admin updates a user", %{
   As an admin
   I want to be able to update user's information
   so that I may better manage my application
   } do
-    # Acceptance Criteria:
-    # [X] Updateable user information
-    # [X] notification when users information is updated
-    # [X] I must have admin to update users information
+  # Acceptance Criteria:
+  # [X] Updateable user information
+  # [X] notification when users information is updated
+  # [X] I must have admin to update users information
 
-  let(:admin) { FactoryGirl.create(:user, role: 'admin') }
+  let(:admin) { FactoryGirl.create(:user, role: "admin") }
   let!(:user) { FactoryGirl.create(:user) }
 
   context "admin is signed in" do

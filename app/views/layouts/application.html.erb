@@ -7,33 +7,47 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-  <nav class="top-bar">
-    <ul class="title-area">
-      <li class="name">
-        <h1><a href="/">BreakableToy</a></h1>
-      </li>
-    </ul>
-
-    <section class="top-bar-section">
-      <ul class="right">
+  <!-- Header and Nav -->
+  <div class="row">
+    <div class="large-3 columns">
+      <h1><img src="http://placehold.it/400x100&text=Logo" /></h1>
+    </div>
+    <div class="large-9 columns">
+      <ul class="inline-list right">
         <%- if current_user -%>
-          <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+        <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
         <%- else -%>
-          <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-          <li><%= link_to 'Sign In', new_user_session_path %></li>
+        <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+        <li><%= link_to 'Sign In', new_user_session_path %></li>
         <%- end -%>
       </ul>
-    </section>
-  </nav>
-
-  <%- flash.each do |key, value| -%>
-    <div class="flash flash-<%= key %>">
-      <%= value %>
     </div>
-  <%- end -%>
+  </div>
+
+  <!-- End Header and Nav -->
+
+  <div class="row">
+    <div class="large-9 push-3 columns">
+      <%- flash.each do |key, value| -%>
+      <div class="flash flash-<%= key %>">
+        <%= value %>
+      </div>
+      <%- end -%>
 
   <%= yield %>
+
+  </div>
+  <div class="large-3 pull-9 columns">
+    <ul class="side-nav">
+      <li><%= link_to "Orders", orders_path %></li>
+      <li><%= link_to "New Order", new_order_path %></li>
+      <% if current_user.try(:role) == "admin" %>
+        <li><%= link_to "Manage Orders", admin_orders_path %></li>
+        <li><%= link_to "Manage Users", admin_users_path %></li>
+      <% end %>
+    </ul>
+  </div>
+  </div>
 
   <%= javascript_include_tag 'application' %>
   <%= javascript_tag do %>

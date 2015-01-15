@@ -1,0 +1,33 @@
+
+<div class="row">
+  <div class="small-10 small-centered columns">
+    <table class="tablesorter">
+      <thead>
+        <tr>
+          <th width="200">Email</th>
+          <th>Name</th>
+          <th width="150">Sign Up Date</th>
+          <th>Details</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @users.each do |user| %>
+        <tr>
+          <td><%= user.email %></td>
+          <td><%= user.first_name %> <%= user.last_name %> </td>
+          <td><%= user.created_at %></td>
+          <td><%= link_to "Details", admin_user_path(user),
+                  class: "button info small",
+                  id: user.id %></td>
+          <td><%= link_to "Delete User", admin_user_path(user),
+                  method: :delete,
+                  class: "button small warning",
+                  id: "delete#{user.id}",
+                  data: { confirm: "Are you sure?"} %> </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

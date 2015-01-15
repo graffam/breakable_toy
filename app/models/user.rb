@@ -5,4 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :orders
+
+  def is_admin?
+    role == "admin"
+  end
 end

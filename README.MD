@@ -39,3 +39,8 @@ January 13, 2015:
 * Added error messages for creating an order
 * Added Updating Orders
 * Added lot numbers to kit_orders
+
+January 14, 2015:
+* Added Admin name space
+* Added Admin deleting and updating user accounts
+* Added Admin deleting orders

@@ -6,7 +6,11 @@
       <li class="price"><%= @order.machine.name %></li>
       <li class="description">Comments: <%= @order.comment %><li>
       <li class="bullet-item">Needed By: <%= @order.needed_by %></li>
-      <li class="bullet-item">Placed By: <%= @order.user.first_name %></li>
+      <% if @order.user != nil %>
+        <li class="bullet-item">Placed By: <%= @order.user.first_name %></li>
+      <% else %>
+        <li>None</li>
+      <% end %>
       <li class="cta-button"><%= link_to "Update Status", edit_order_path(@order), class: "button round" %></li>
     </ul>
     <table class="tablesorter">

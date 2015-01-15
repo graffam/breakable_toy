@@ -1,0 +1,8 @@
+<h1>User Information</h1>
+<ul>
+  <li>Name: <%= @user.first_name %> <%= @user.last_name %></li>
+  <li>Email: <%= @user.email %></li>
+  <li>Date Created: <%= @user.created_at %></li>
+</ul>
+<%= link_to "Update User Information", edit_admin_user_path(@user), class: "button round" %> 
+<%= link_to "Back", :back, class: "button info small" %>

@@ -7,6 +7,9 @@ require File.join(File.dirname(__FILE__), 'support/valid_attribute')
 require File.join(File.dirname(__FILE__), 'support/factory_girl')
 require 'capybara/rspec'
 
+include Warden::Test::Helpers
+Warden.test_mode!
+
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|

@@ -41,10 +41,12 @@
     <ul class="side-nav">
       <li><%= link_to "Orders", orders_path %></li>
       <li><%= link_to "New Order", new_order_path %></li>
-      <% if current_user.try(:role) == "admin" %>
+      <% if current_user != nil %>
+        <% if current_user.role == "admin" %>
         <li><%= link_to "Manage Orders", admin_orders_path %></li>
         <li><%= link_to "Manage Users", admin_users_path %></li>
       <% end %>
+    <% end %>
     </ul>
   </div>
   </div>

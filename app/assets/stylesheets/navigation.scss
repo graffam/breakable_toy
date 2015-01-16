@@ -1,5 +1,9 @@
 @import "variables";
 
+.addform {
+  font-family: $font-family;
+}
+
 .side-nav li {
   margin-bottom: 0;
   &:hover {
@@ -16,7 +20,7 @@
   font-weight: 300;
   letter-spacing: .5px;
 }
-.side-nav li:first-child {
+.side-nav {
   border-top: 4px solid $border-color;
 }
 

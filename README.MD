@@ -44,3 +44,6 @@ January 14, 2015:
 * Added Admin name space
 * Added Admin deleting and updating user accounts
 * Added Admin deleting orders
+January 15, 2015:
+* Added styled side navigation bar
+*

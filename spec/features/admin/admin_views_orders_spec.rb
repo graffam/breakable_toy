@@ -25,8 +25,8 @@ feature "admin views orders", %{
       visit admin_orders_path
 
       expect(page).to have_content(@order.user.first_name)
-      expect(page).to have_content(@order.created_at)
-      expect(page).to have_content(@order.needed_by)
+      expect(page).to have_content(@order.created_at.strftime("%m/%d/%Y"))
+      expect(page).to have_content(@order.needed_by.strftime("%m/%d/%Y"))
       expect(page).to have_content(@order.machine.name)
     end
 
@@ -45,7 +45,7 @@ feature "admin views orders", %{
 
       click_link ("delete#{@order.id}")
 
-      expect(page).to_not have_content(@order.created_at)
+      expect(page).to_not have_content(@order.created_at.strftime("%m/%d/%Y"))
       expect(page).to have_content("Order Successfully Deleted")
     end
   end

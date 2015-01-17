@@ -29,7 +29,7 @@ feature "Updating an Order", %{
         visit order_path(@order)
 
         click_on("Update Status")
-        save_and_open_page
+
         expect(page).to have_content("Lot #'s")
         expect(page).to have_content(@order.machine.name)
         expect(page).to have_content(@order.needed_by)

@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  root "homes#index"
+  devise_scope :user do
+    root to: "landings#index"
+  end
+
   devise_for :users
 
   resources :orders, only: [:index, :show, :edit, :update, :create, :new]

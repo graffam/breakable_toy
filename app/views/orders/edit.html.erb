@@ -1,39 +1,75 @@
-<div class="row">
-  <div class="small-10 small-centered columns">
-    <h3>Status: <%= @order.status %></h3>
-    <ul class="pricing-table">
-      <li class="title"> Order Details</li>
-      <li class="price"><%= @order.machine.name %></li>
-      <li class="description">Comments: <%= @order.comment %><li>
-      <li class="bullet-item">Needed By: <%= @order.needed_by %></li>
-      <% if @order.user != nil %>
-        <li class="bullet-item">Placed By: <%= @order.user.first_name %></li>
-      <% else %>
-        <li>None</li>
-      <% end %>
-      </ul>
+<div class="row add-top">
+  <div class="small-12 columns">
+    <fieldset>
+      <legend>Order Details</legend>
       <%= form_for(@order) do |f| %>
-        <table class="tablesorter">
-          <thead>
-            <tr>
-              <th width="200">Kit</th>
-              <th>Amount</th>
-              <th>Lot #'s</th>
-            </tr>
-          </thead>
-          <tbody>
+      <div class="row">
+        <div class="small-6 columns info">
+          <div class="infolabel">
+            Machine
+          </div>
+          <%= @order.machine.name %>
+        </div>
+        <div class="small-6 columns info">
+          <div class="infolabel">
+            <%= f.label :status, id: "status" %>
+          </div>
+            <%= f.select(:status, [["In Progress", "In Progress"],["Done", "Done"],["To Do", "To Do"]]) %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-6 columns info">
+          <div class="infolabel">
+            Placed By
+          </div>
+          <% if @order.user != nil %>
+            <%= @order.user.first_name %>
+          <% else %>
+          None
+          <% end %>
+        </div>
+        <div class="small-6 columns info">
+          <div class="infolabel">
+            <%= f.label :needed_by, class: "add_label"%>
+          </div>
+          <%= f.date_field :needed_by %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-12 columns info">
+          <div class="infolabel">
+            <%= f.label :comment %>
+          </div>
+            <%= f.text_area :comment %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="small 1 columns end info infolabel">
+          Kits
+        </div>
+        <div class="small-10 small-centered columns info">
+          <table class="tablesorter">
+            <thead class="info">
+              <tr>
+                <th class="infolabel" width="200">Kit</th>
+                <th class="infolabel" width="200">Amount</th>
+                <th class="infolabel" width="200">Lot #'s</th>
+              </tr>
+            </thead>
+            <tbody>
               <%= f.fields_for :kit_orders, @order.kit_orders do |ff| %>
-            <tr>
-              <td><%= ff.label :name, ff.object.name %></td>
-              <td><%= ff.label :amount, ff.object.amount %></td>
-              <td><%= ff.text_area :lot_numbers %></td>
-            </tr>
+                <tr>
+                  <td><%= ff.label :name, ff.object.name %></td>
+                  <td><%= ff.label :amount, ff.object.amount %></td>
+                  <td><%= ff.text_area :lot_numbers %></td>
+                </tr>
               <% end %>
-          </tbody>
-        </table>
-        <%= f.label :status %>
-        <%= f.select(:status, [["In Progress", "In Progress"],["Done", "Done"],["To Do", "To Do"]]) %>
-        <%= f.submit "Update" %>
-      <% end %>
-    </div>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </fieldset>
+    <%= f.submit "Update", class: "button" %>
+    <% end %>
   </div>
+</div>

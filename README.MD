@@ -46,4 +46,9 @@ January 14, 2015:
 * Added Admin deleting orders
 January 15, 2015:
 * Added styled side navigation bar
-*
+* Started work on styled ordering page
+January 16, 2015:
+* Finished styling of ordering page
+* Added styling for order details page
+* Added sign in page styling
+* Makes root path homes#index

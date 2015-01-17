@@ -18,8 +18,10 @@ var $commentInput = $('#order_comment');
 var $kitDiv = $(".kitDiv");
 var $kitInput =$("#kit");
 
+var $user_email_field = $("#user_email")
+
 $costObjectDiv.on('mouseover', function() {
-  $costInput.css('background-color', '#FFFCE2');
+  $costInput.css('background-color', '#D9F0FF');
 });
 
 $costObjectDiv.on('mouseout', function() {
@@ -27,7 +29,7 @@ $costObjectDiv.on('mouseout', function() {
 });
 
 $neededByDiv.on('mouseover', function() {
-  $needInput.css('background-color', '#FFFCE2');
+  $needInput.css('background-color', '#D9F0FF');
 });
 
 $neededByDiv.on('mouseout', function() {
@@ -35,7 +37,7 @@ $neededByDiv.on('mouseout', function() {
 });
 
 $commentDiv.on('mouseover', function() {
-  $commentInput.css('background-color', '#FFFCE2');
+  $commentInput.css('background-color', '#D9F0FF');
 });
 
 $commentDiv.on('mouseout', function() {
@@ -43,7 +45,7 @@ $commentDiv.on('mouseout', function() {
 });
 
 $kitDiv.on('mouseover',function() {
-  $(this).find("input.kit").css("background", '#FFFCE2');
+  $(this).find("input.kit").css("background", '#D9F0FF');
 });
 
 $kitDiv.on('mouseout',function() {

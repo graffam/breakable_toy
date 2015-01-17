@@ -10,17 +10,9 @@
   <!-- Header and Nav -->
   <div class="row">
     <div class="large-3 columns">
-      <h1><img src="http://placehold.it/400x100&text=Logo" /></h1>
+      <h1><%= image_tag("broadlogo_normal.jpg", id:"logo")%></h1>
     </div>
     <div class="large-9 columns">
-      <ul class="inline-list right">
-        <%- if current_user -%>
-        <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
-        <%- else -%>
-        <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-        <li><%= link_to 'Sign In', new_user_session_path %></li>
-        <%- end -%>
-      </ul>
     </div>
   </div>
 
@@ -46,7 +38,13 @@
         <li><%= link_to "Manage Orders", admin_orders_path %></li>
         <li><%= link_to "Manage Users", admin_users_path %></li>
       <% end %>
-    <% end %>
+      <% end %>
+      <%- if current_user -%>
+      <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+      <%- else -%>
+      <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+      <li><%= link_to 'Sign In', new_user_session_path %></li>
+      <%- end -%>
     </ul>
   </div>
   </div>

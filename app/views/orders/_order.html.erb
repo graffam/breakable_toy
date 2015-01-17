@@ -29,7 +29,7 @@
           <%= ff.label :name, ff.object.name, class: "add_label" %>
           <%= ff.hidden_field :kit_id, value: ff.object.kit_id %>
           <%= ff.hidden_field :name, value: ff.object.name %>
-          <%= ff.number_field :amount, in: 0..30, class: "kit" %>
+          <%= ff.number_field :amount, in: 0..30, placeholder: 0, class: "kit" %>
         </div>
       <% end %>
     </div>
@@ -39,7 +39,7 @@
     </div>
     <div class="row">
       <div class="small-12">
-        <%= f.submit "Submit", class: "button success" %>
+        <%= f.submit "Submit", class: "button" %>
         <% end %>
       </div>
     </div>

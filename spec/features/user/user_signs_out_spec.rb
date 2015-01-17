@@ -6,17 +6,17 @@ feature 'user signs out', %Q{
   So that my identity is forgotten about on the machine I'm using
 } do
   # Acceptance Criteria
-  # * If I'm signed in, i have an option to sign out
-  # * When I opt to sign out, I get a confirmation that my identity has been
-  #   forgotten on the machine I'm using
+  # [X] If I'm signed in, i have an option to sign out
+  # [X] When I opt to sign out, I get a confirmation that my identity has been
+  #     forgotten on the machine I'm using
 
   scenario 'authenticated user signs out' do
     user = FactoryGirl.create(:user)
 
     visit new_user_session_path
 
-    fill_in 'Email', with: user.email
-    fill_in 'Password', with: user.password
+    fill_in "user_email", with: user.email
+    fill_in "user_password", with: user.password
 
     click_button 'Log in'
 

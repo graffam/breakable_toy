@@ -1,4 +1,4 @@
-module Devise
+module LogHelper
   def resource_name
     :user
   end

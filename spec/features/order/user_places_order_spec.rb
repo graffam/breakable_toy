@@ -17,10 +17,10 @@ feature "placing order", %{
     before :each do
       user = FactoryGirl.create(:user)
 
-      visit new_user_session_path
+      visit root_path
 
-      fill_in "Email", with: user.email
-      fill_in "Password", with: user.password
+      fill_in "user_email", with: user.email
+      fill_in "user_password", with: user.password
 
       click_button "Log in"
     end
@@ -30,14 +30,15 @@ feature "placing order", %{
 
       select("HSX", from: "machine_id")
 
-      click_button "Submit"
+      click_on "Submit"
 
       select("Custom Sequencing", from: "order_cost_object_id")
 
       fill_in "Comment", with: "Need this asap"
       fill_in "order[kit_orders_attributes][0][amount]", with: "1"
       fill_in "order_needed_by", with: "07/10/2015"
-      click_button "Submit"
+
+      click_on "Submit"
 
       expect(page).to have_content("Order Created Successfully")
       expect(page).to have_content("168c")

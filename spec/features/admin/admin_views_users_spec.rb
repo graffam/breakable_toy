@@ -48,6 +48,6 @@ feature "admin views users", %{
     visit admin_users_path
 
     expect(page).to have_content("not authorized")
-    expect(current_path).to eq(root_path)
+    expect(current_path).to eq(orders_path)
   end
 end

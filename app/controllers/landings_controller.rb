@@ -1,13 +1,13 @@
 
 class LandingsController < ApplicationController
-  include Devise
+  include LogHelper
 
   def index
-    if current_user == nil
+    if current_user
+      redirect_to orders_path
+    else
       @resource = resource
       render layout: false
-    else
-      redirect_to orders_path
     end
   end
 

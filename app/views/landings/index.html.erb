@@ -7,7 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+  <div class="row">
+    <div class="large-9 push-3 columns">
+      <%- flash.each do |key, value| -%>
+      <div class="flash flash-<%= key %>">
+        <%= value %>
+      </div>
+      <%- end -%>
+    </div>
+  </div>
 <a href="#" data-reveal-id="myModal" class="button">Log In Or Sign Up</a>
 <div id="myModal" class="reveal-modal remove-whitespace" data-reveal>
   <div class="row">

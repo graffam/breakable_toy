@@ -1,19 +1,15 @@
 <div class="row add-top">
+  <%= form_for(@order) do |f| %>
   <div class="small-12 columns">
     <fieldset>
       <legend>Order Details</legend>
-      <%= form_for(@order) do |f| %>
       <div class="row">
         <div class="small-6 columns info">
-          <div class="infolabel">
-            Machine
-          </div>
+          <p class="infolabel">Machine</p>
           <%= @order.machine.name %>
         </div>
         <div class="small-6 columns info">
-          <div class="infolabel">
-            <%= f.label :status, id: "status" %>
-          </div>
+            <%= f.label :status, id: "status", class: "infolabel" %>
             <%= f.select(:status, [["In Progress", "In Progress"],["Done", "Done"],["To Do", "To Do"]]) %>
         </div>
       </div>
@@ -25,22 +21,18 @@
           <% if @order.user != nil %>
             <%= @order.user.first_name %>
           <% else %>
-          None
+            None
           <% end %>
         </div>
         <div class="small-6 columns info">
-          <div class="infolabel">
-            <%= f.label :needed_by, class: "add_label"%>
-          </div>
+          <%= f.label :needed_by, class: "add_label infolabel"%>
           <%= f.date_field :needed_by %>
         </div>
       </div>
       <div class="row">
         <div class="small-12 columns info">
-          <div class="infolabel">
-            <%= f.label :comment %>
-          </div>
-            <%= f.text_area :comment %>
+          <%= f.label :comment, class: "infolabel" %>
+          <%= f.text_area :comment %>
         </div>
       </div>
       <div class="row">
@@ -69,7 +61,7 @@
         </div>
       </div>
     </fieldset>
-    <%= f.submit "Update", class: "button" %>
-    <% end %>
   </div>
+  <%= f.submit "Update", class: "button" %>
+  <% end %>
 </div>

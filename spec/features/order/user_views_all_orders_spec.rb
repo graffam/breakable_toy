@@ -30,7 +30,7 @@ feature 'viewing an order', %{
       visit orders_path
 
       expect(page).to have_content(@order.machine.name)
-      expect(page).to have_content(@order.needed_by)
+      expect(page).to have_content(@order.needed_by.strftime("%m/%d/%Y"))
       expect(page).to have_content(@order.user.first_name)
       expect(page).to have_link(@order.id)
 
@@ -42,7 +42,7 @@ feature 'viewing an order', %{
       click_on(@order.id)
 
       expect(page).to have_content(@order.machine.name)
-      expect(page).to have_content(@order.needed_by)
+      expect(page).to have_content(@order.needed_by.strftime("%m/%d/%Y") )
       expect(page).to have_content(@order.user.first_name)
       expect(page).to have_content(@order.comment)
 

@@ -1,7 +1,7 @@
 <div class="row addform">
+  <%= form_for(order) do |f| %>
   <div class="small-12 columns">
     <div class="row add-top">
-      <%= form_for(order) do |f| %>
       <div class="small-6 columns add_form_fields" id="cost-object">
         <%= f.label :cost_object_id, "Cost Object", class: "add_label" %>
         <%= f.collection_select :cost_object_id, CostObject.all, :id, :name%>
@@ -39,9 +39,9 @@
     </div>
     <div class="row">
       <div class="small-12">
-        <%= f.submit "Submit", class: "button" %>
-        <% end %>
       </div>
     </div>
   </div>
+  <%= f.submit "Submit", class: "button" %>
+  <% end %>
 </div>

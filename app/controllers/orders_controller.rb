@@ -71,6 +71,7 @@ class OrdersController < ApplicationController
 
   def order_params
     params.require(:order).permit(
+      :status,
       :machine_id,
       :comment,
       :needed_by,

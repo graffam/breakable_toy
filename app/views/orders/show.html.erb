@@ -31,7 +31,7 @@
           <div class="infolabel">
             Date Needed
           </div>
-          <%= @order.needed_by %>
+          <%= @order.needed_by.strftime("%m/%d/%Y") %>
         </div>
       </div>
       <div class="row">

@@ -16,9 +16,9 @@ feature "placing order", %{
   context "User is signed in" do
     before :each do
       user = FactoryGirl.create(:user)
-
+      @order = FactoryGirl.build(:order)
       visit root_path
-      save_and_open_page
+
       fill_in "user_email", with: user.email
       fill_in "user_password", with: user.password
 
@@ -36,13 +36,14 @@ feature "placing order", %{
 
       fill_in "Comment", with: "Need this asap"
       fill_in "order_kit_orders_attributes_0_amount", with: "1"
-      page.find('#order_needed_by').set("07/10/2015")
+
+      fill_in "order_needed_by", with: @order.needed_by
+
 
       find('.button').click
 
-      save_and_open_page
-
-      expect(page).to have_content("2015-07-10")
+      ### capybara puts this in as day month year...why god why? ###
+      expect(page).to have_content(@order.needed_by.strftime("%m/%d/%Y"))
       expect(page).to have_content("Order Created Successfully")
       expect(page).to have_content("168c")
       expect(page).to have_content("HSX")

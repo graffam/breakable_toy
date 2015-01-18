@@ -4,7 +4,7 @@
     <div class="row add-top">
       <div class="small-6 columns add_form_fields" id="cost-object">
         <%= f.label :cost_object_id, "Cost Object", class: "add_label" %>
-        <%= f.collection_select :cost_object_id, CostObject.all, :id, :name%>
+        <%= f.collection_select :cost_object_id, CostObject.all, :id, :name, class: "formfields"%>
         <%= f.hidden_field :machine_id, value: machine.id %>
       </div>
       <div class="small-6 columns add_form_fields end" id="needed-by">

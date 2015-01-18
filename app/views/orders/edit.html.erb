@@ -4,34 +4,34 @@
     <fieldset>
       <legend>Order Details</legend>
       <div class="row">
-        <div class="small-6 columns info">
-          <p class="infolabel">Machine</p>
+        <div class="small-6 columns edit">
+          <p class="infolabel edit">Machine</p>
           <%= @order.machine.name %>
         </div>
-        <div class="small-6 columns info">
-            <%= f.label :status, id: "status", class: "infolabel" %>
+        <div class="small-6 columns edit">
+            <%= f.label :status , class: "edit" %>
             <%= f.select(:status, [["In Progress", "In Progress"],["Done", "Done"],["To Do", "To Do"]]) %>
         </div>
       </div>
       <div class="row">
-        <div class="small-6 columns info">
-          <div class="infolabel">
+        <div class="small-6 columns edit">
+          <div class="infolabel edit">
             Placed By
           </div>
           <% if @order.user != nil %>
-            <%= @order.user.first_name %>
+            <p class="edit"> <%= @order.user.first_name %><p>
           <% else %>
             None
           <% end %>
         </div>
-        <div class="small-6 columns info">
-          <%= f.label :needed_by, class: "add_label infolabel"%>
-          <%= f.date_field :needed_by %>
+        <div class="small-6 columns edit">
+          <%= f.label :needed_by, class: "edit" %>
+          <%= f.date_field :needed_by, class: "edit" %>
         </div>
       </div>
       <div class="row">
         <div class="small-12 columns info">
-          <%= f.label :comment, class: "infolabel" %>
+          <%= f.label :comment, class: "infolabel edit" %>
           <%= f.text_area :comment %>
         </div>
       </div>

@@ -1,5 +1,9 @@
 @import "variables";
 
+.addform {
+  font-family: $font-family;
+}
+
 .side-nav li {
   margin-bottom: 0;
   &:hover {
@@ -16,9 +20,7 @@
   font-weight: 300;
   letter-spacing: .5px;
 }
-.side-nav li:first-child {
-  border-top: 4px solid $border-color;
-}
+
 
 .side-nav li a:not(.button):hover, .side-nav li a:not(.button):focus{
   font-family: $font-family;
@@ -27,4 +29,12 @@
 .side-nav li a:not(.button){
   font-family: $font-family;
   color: black;
+}
+
+#logo {
+  padding-left: 14px;
+}
+
+input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px $link-hover inset;
 }

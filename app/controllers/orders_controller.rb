@@ -63,8 +63,7 @@ class OrdersController < ApplicationController
       kit_order.lot_numbers = values["lot_numbers"]
       kit_order.save
     end
-    @order.status = params["order"]["status"]
-    @order.save
+    @order.update!(order_params)
     redirect_to order_path(@order)
   end
 
@@ -72,6 +71,7 @@ class OrdersController < ApplicationController
 
   def order_params
     params.require(:order).permit(
+      :status,
       :machine_id,
       :comment,
       :needed_by,

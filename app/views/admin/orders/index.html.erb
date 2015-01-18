@@ -18,8 +18,8 @@
         <tr>
           <td><%= order.machine.name %></td>
           <td><%= order.status %></td>
-          <td><%= order.needed_by%></td>
-          <td><%= order.created_at %></td>
+          <td><%= order.needed_by.strftime("%m/%d/%Y")%></td>
+          <td><%= order.created_at.strftime("%m/%d/%Y") %></td>
           <% if order.user != nil %>
             <td><%= order.user.first_name %></td>
           <% else %>

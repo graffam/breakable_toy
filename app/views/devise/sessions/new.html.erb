@@ -1,26 +1,31 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+  <div class="row">
+    <div class="large-6 columns auth-plain">
+      <div class="signup-panel left-solid">
+        <p class="welcome">Registered Users</p>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="row collapse">
+            <div class="small-12  columns">
+              <div class="field">
+                <%= f.email_field :email, autofocus: true, placeholder: "email" %>
+              </div>
+            </div>
+          </div>
+          <div class="row collapse">
+            <div class="small-12 columns ">
+              <%= f.password_field :password, autocomplete: "off", placeholder: "password" %>
+            </div>
+          </div>
+          <%= f.submit "Log in", class: "button" %>
+        <% end %>
+      </div>
     </div>
-  <% end -%>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
+    <div class="large-6 columns auth-plain">
+      <div class="signup-panel newusers">
+        <p class="welcome"> New User?</p>
+        <p>By creating an account with us, you will be able to pleace orders for reagents, and more.</p><br>
+        <a href="#" class="button">Sign Up</a></br>
+      </div>
+    </div>
   </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+  <a class="close-reveal-modal">&#215;</a>
+</div>

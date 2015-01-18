@@ -19,8 +19,8 @@ feature 'viewing an order', %{
       FactoryGirl.create(:kit_order, order_id: @order.id)
       visit new_user_session_path
 
-      fill_in "Email", with: user.email
-      fill_in "Password", with: user.password
+      fill_in "user_email", with: user.email
+      fill_in "user_password", with: user.password
 
       click_button "Log in"
     end
@@ -30,7 +30,7 @@ feature 'viewing an order', %{
       visit orders_path
 
       expect(page).to have_content(@order.machine.name)
-      expect(page).to have_content(@order.needed_by)
+      expect(page).to have_content(@order.needed_by.strftime("%m/%d/%Y"))
       expect(page).to have_content(@order.user.first_name)
       expect(page).to have_link(@order.id)
 
@@ -42,7 +42,7 @@ feature 'viewing an order', %{
       click_on(@order.id)
 
       expect(page).to have_content(@order.machine.name)
-      expect(page).to have_content(@order.needed_by)
+      expect(page).to have_content(@order.needed_by.strftime("%m/%d/%Y"))
       expect(page).to have_content(@order.user.first_name)
       expect(page).to have_content(@order.comment)
 

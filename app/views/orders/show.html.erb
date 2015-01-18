@@ -1,35 +1,73 @@
-<div class="row">
-  <div class="small-10 small-centered columns">
-    <h3>Status: <%= @order.status %></h3>
-    <ul class="pricing-table">
-      <li class="title"> Order Details</li>
-      <li class="price"><%= @order.machine.name %></li>
-      <li class="description">Comments: <%= @order.comment %><li>
-      <li class="bullet-item">Needed By: <%= @order.needed_by %></li>
-      <% if @order.user != nil %>
-        <li class="bullet-item">Placed By: <%= @order.user.first_name %></li>
-      <% else %>
-        <li>None</li>
-      <% end %>
-      <li class="cta-button"><%= link_to "Update Status", edit_order_path(@order), class: "button round" %></li>
-    </ul>
-    <table class="tablesorter">
-      <thead>
-        <tr>
-          <th width="200">Kit</th>
-          <th>Amount</th>
-          <th>Lot #'s</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @kit_orders.each do |kit_order| %>
-        <tr>
-          <td><%= kit_order.name %></td>
-          <td><%= kit_order.amount %></td>
-          <td><%= kit_order.lot_numbers %></td>
-        </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
+<div class="row add-top">
+  <div class="small-12 columns">
+    <fieldset>
+      <legend>Order Details</legend>
+      <div class="row">
+        <div class="small-6 columns info">
+          <div class="infolabel">
+            Machine
+          </div>
+          <%= @order.machine.name %>
+        </div>
+        <div class="small-6 columns info">
+          <div class="infolabel">
+            Status
+          </div>
+          <%= @order.status %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-6 columns info">
+          <div class="infolabel">
+            Placed By
+          </div>
+            <% if @order.user != nil %>
+              <%= @order.user.first_name %>
+            <% else %>
+              None
+            <% end %>
+        </div>
+        <div class="small-6 columns info">
+          <div class="infolabel">
+            Date Needed
+          </div>
+          <%= @order.needed_by.strftime("%m/%d/%Y") %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-12 columns info">
+          <div class="infolabel">
+            Comments
+          </div>
+          <%= @order.comment %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="small 1 columns end info infolabel">
+          Kits
+        </div>
+        <div class="small-10 small-centered columns info">
+          <table class="tablesorter">
+            <thead class="info">
+              <tr>
+                <th class="infolabel" width="200">Kit</th>
+                <th class="infolabel" width="200">Amount</th>
+                <th class="infolabel" width="200">Lot #'s</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @kit_orders.each do |kit_order| %>
+              <tr>
+                <td><%= kit_order.name %></td>
+                <td><%= kit_order.amount %></td>
+                <td><%= kit_order.lot_numbers %></td>
+              </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </fieldset>
+  <%= link_to "Update Status", edit_order_path(@order), class: "button" %>
+</div>
 </div>

@@ -6,10 +6,10 @@ feature "Updating an Order", %{
   So that I can inform the rest of the team of the status of their order
   } do
     # Acceptance Criteria:
-    # [] I must see the details of the order
-    # [] I must be able to change the status of the order
-    # [] I must be able to add the lot numbers
-    # [] I must be logged in to update an order
+    # [X] I must see the details of the order
+    # [X] I must be able to change the status of the order
+    # [X] I must be able to add the lot numbers
+    # [X] I must be logged in to update an order
 
     context "User is signed in and there are existing orders" do
       before :each do
@@ -18,8 +18,8 @@ feature "Updating an Order", %{
         FactoryGirl.create(:kit_order, order_id: @order.id)
         visit new_user_session_path
 
-        fill_in "Email", with: user.email
-        fill_in "Password", with: user.password
+        fill_in "user_email", with: user.email
+        fill_in "user_password", with: user.password
 
         click_button "Log in"
       end
@@ -32,7 +32,6 @@ feature "Updating an Order", %{
 
         expect(page).to have_content("Lot #'s")
         expect(page).to have_content(@order.machine.name)
-        expect(page).to have_content(@order.needed_by)
         expect(page).to have_content(@order.user.first_name)
         expect(page).to have_content(@order.comment)
       end
@@ -46,8 +45,9 @@ feature "Updating an Order", %{
 
         click_on "Update"
 
+        expect(page).to have_content(@order.needed_by.strftime("%m/%d/%Y"))
         expect(page).to have_content("Test Text")
-        expect(page).to have_content("Status: In Progress")
+        expect(page).to have_content("In Progress")
       end
     end
 

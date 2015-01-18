@@ -25,7 +25,7 @@ feature "admin views users", %{
       expect(page).to have_content(user.email)
       expect(page).to have_content(user.first_name)
       expect(page).to have_content(user.last_name)
-      expect(page).to have_content(user.created_at)
+      expect(page).to have_content(user.created_at.strftime("%m/%d/%Y"))
     end
 
     scenario "admin visits details page of user" do
@@ -36,7 +36,7 @@ feature "admin views users", %{
       expect(page).to have_content(user.email)
       expect(page).to have_content(user.first_name)
       expect(page).to have_content(user.last_name)
-      expect(page).to have_content(user.created_at)
+      expect(page).to have_content(user.created_at.strftime("%m/%d/%Y"))
       expect(page).to have_content(user.role)
       expect(page).to have_link("Back")
     end
@@ -48,6 +48,6 @@ feature "admin views users", %{
     visit admin_users_path
 
     expect(page).to have_content("not authorized")
-    expect(current_path).to eq(root_path)
+    expect(current_path).to eq(orders_path)
   end
 end

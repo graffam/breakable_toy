@@ -1,16 +1,47 @@
-<%= form_for(order) do |f| %>
-  <%= f.fields_for :kit_orders, order.kit_orders do |ff| %>
-    <%= ff.label :name, ff.object.name %>
-    <%= ff.hidden_field :kit_id, value: ff.object.kit_id %>
-    <%= ff.hidden_field :name, value: ff.object.name %>
-    <%= ff.number_field :amount, in: 0..30 %>
+<div class="row addform">
+  <%= form_for(order) do |f| %>
+  <div class="small-12 columns">
+    <div class="row add-top">
+      <div class="small-6 columns add_form_fields" id="cost-object">
+        <%= f.label :cost_object_id, "Cost Object", class: "add_label" %>
+        <%= f.collection_select :cost_object_id, CostObject.all, :id, :name, class: "formfields"%>
+        <%= f.hidden_field :machine_id, value: machine.id %>
+      </div>
+      <div class="small-6 columns add_form_fields end" id="needed-by">
+        <%= f.label :needed_by, class: "add_label"%>
+        <%= f.date_field :needed_by %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 columns add_form_fields" id="comment">
+        <%= f.label :comment %>
+        <%= f.text_area :comment %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 columns", id="kitlabel">
+        Kits
+      </div>
+    </div>
+    <div class="row">
+      <%= f.fields_for :kit_orders, order.kit_orders do |ff| %>
+        <div class="small-3 columns end add_form_fields kitDiv">
+          <%= ff.label :name, ff.object.name, class: "add_label" %>
+          <%= ff.hidden_field :kit_id, value: ff.object.kit_id %>
+          <%= ff.hidden_field :name, value: ff.object.name %>
+          <%= ff.number_field :amount, in: 0..30, placeholder: 0, class: "kit" %>
+        </div>
+      <% end %>
+    </div>
+    <div class="row line">
+      <div class"small-12 columns">
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12">
+      </div>
+    </div>
+  </div>
+  <%= f.submit "Submit", class: "button" %>
   <% end %>
-  <%= f.label :comment %>
-  <%= f.text_field :comment %>
-  <%= f.label :cost_object_id, "Cost Object" %>
-  <%= f.collection_select :cost_object_id, CostObject.all, :id, :name %>
-  <%= f.label :needed_by %>
-  <%= f.date_field :needed_by %>
-  <%= f.hidden_field :machine_id, value: machine.id %>
-  <%= f.submit "Submit" %>
-<% end %>
+</div>

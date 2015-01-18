@@ -1,4 +1,3 @@
-
 class LandingsController < ApplicationController
   include LogHelper
 
@@ -10,5 +9,4 @@ class LandingsController < ApplicationController
       render layout: false
     end
   end
-
 end

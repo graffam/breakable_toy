@@ -39,10 +39,8 @@ feature "placing order", %{
 
       fill_in "order_needed_by", with: @order.needed_by
 
+      find(".button").click
 
-      find('.button').click
-
-      ### capybara puts this in as day month year...why god why? ###
       expect(page).to have_content(@order.needed_by.strftime("%m/%d/%Y"))
       expect(page).to have_content("Order Created Successfully")
       expect(page).to have_content("168c")

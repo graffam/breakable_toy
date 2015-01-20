@@ -15,5 +15,6 @@
 //= require jquery.tablesorter
 //= require foundation
 //= require order_table
+//= require Chart.min
 //= require_tree .
 $(function(){ $(document).foundation(); });

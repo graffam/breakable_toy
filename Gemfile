@@ -9,6 +9,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'devise'
 gem 'foundation-rails'
+gem 'gon'
 
 group :development, :test do
   gem 'pry'

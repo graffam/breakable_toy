@@ -6,17 +6,15 @@
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-<div class="row">
-  <div class="small-12  small-centered-columns">
-      <%- flash.each do |key, value| -%>
-      <div class="flash flash-<%= key %>">
-        <%= value %>
-      </div>
-      <%- end -%>
-    <div class="row">
-      <div class="small-12 columns">
-        <a href="#" data-reveal-id="myModal" class="button">Log In Or Sign Up</a>
+<body id="body">
+  <div id="center">
+    <div class="row" id="frontpage">
+      <div class="small-12 text-center", id="frontlogo">
+      <%= image_tag("logo.gif", id:"frontlogo") %>
+    </div>
+    <div class="row" id="frontpage">
+      <div class="small-12 columns text-center landing-button">
+        <a href="#" data-reveal-id="myModal" class="button" id="front-button">Log In Or Sign Up</a>
         <div id="myModal" class="reveal-modal remove-whitespace" data-reveal>
           <div class="row">
             <div class="large-6 columns auth-plain">

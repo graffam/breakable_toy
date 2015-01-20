@@ -1,0 +1,35 @@
+#body {
+  background: url(asset-path("broad1.jpg")) no-repeat center center fixed;
+  background-color: #000;
+  background-size:cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+.landing-button{
+  padding-top: .5em;
+  background-color: #004D8B;
+  color: white;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+#front-button{
+  background-color: white;
+  color: #004D8B;
+}
+
+#frontpage{
+  max-width: none;
+}
+#center {
+  background-color: #004D8B;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#frontlogo{
+  background-color: #004D8B;
+  padding-top: .5em;
+  }

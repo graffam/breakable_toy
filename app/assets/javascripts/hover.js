@@ -18,7 +18,7 @@ var $commentInput = $('#order_comment');
 var $kitDiv = $(".kitDiv");
 var $kitInput =$("#kit");
 
-var $user_email_field = $("#user_email")
+var $user_email_field = $("#user_email");
 
 $costObjectDiv.on('mouseover', function() {
   $costInput.css('background-color', '#D9F0FF');

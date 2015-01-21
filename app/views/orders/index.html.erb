@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="small-10 small-centered columns">
+  <div class="small-12 small-centered columns">
     <table class="tablesorter">
       <thead>
         <tr>
@@ -24,8 +24,8 @@
             <% else %>
               <td>None</td>
             <% end %>
-            <td><%= link_to "Details", order_path(order),
-                    class: "button info small", id: order.id %></td>
+            <td><%= link_to image_tag("info.svg", size: "20x10", class: "tableicon"), order_path(order),
+                    id: order.id %></td>
           </tr>
         <% end %>
       <% end %>

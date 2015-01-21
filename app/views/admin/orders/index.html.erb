@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="small-10 small-centered columns">
+  <div class="small-12 small-centered columns">
     <table class="tablesorter">
       <thead>
         <tr>
@@ -9,7 +9,7 @@
           <th width="150">Date Created</th>
           <th width="150">Orderd By</th>
           <th width="150">Details</th>
-          <th width="150">Delete</th>
+          <th width="200">Delete</th>
         </tr>
       </thead>
       <tbody>
@@ -25,11 +25,9 @@
           <% else %>
             <td>None</td>
           <% end %>
-          <td><%= link_to "Details", order_path(order),
-          class: "button info small", id: order.id %></td>
-          <td><%= link_to "Delete Order", admin_order_path(order),
+          <td><%= link_to image_tag("info.svg", size: "20x10", class: "tableicon"), order_path(order), id: order.id %></td>
+          <td><%= link_to image_tag("trash.svg", size: "20x10", class: "tableicon"), admin_order_path(order),
                   method: :delete,
-                  class: "button small warning",
                   id: "delete#{order.id}",
                   data: { confirm: "Are you sure?"} %></td>
           <td>

@@ -1,24 +1,26 @@
 [![Build Status](https://travis-ci.org/graffam/breakable_toy.svg?branch=master)](https://travis-ci.org/graffam/breakable_toy) [![Code Climate](https://codeclimate.com/github/graffam/breakable_toy.png)](https://codeclimate.com/github/graffam/breakable_toy) [![Coverage Status](https://coveralls.io/repos/graffam/breakable_toy/badge.png)](https://coveralls.io/r/graffam/breakable_toy)
 
 
-Things you may want to cover:
 
-* Ruby version
+Ruby version
 
-* System dependencies
 
-* Configuration
+Configuration
 
-* Database creation
 
-* Database initialization
+How to run the test suite
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+Deployment instructions:
+  If deploying on heroku, follow the heroku documentation for deploying a rails
+  4 application (https://devcenter.heroku.com/articles/getting-started-with-rails4).
 
-* Deployment instructions
-
+  * Git clone this repo
+  * If you do not already have bundler, install bundler gem file
+  * Type bundle install in the cloned directory in the terminal
+  * rake db:migrate
+  * rake db:seed
+  * rails s to start the server
 
 History:
 
@@ -49,6 +51,14 @@ January 15, 2015:
 * Started work on styled ordering page
 January 16, 2015:
 * Finished styling of ordering page
-* Added styling for order details page
-* Added sign in page styling
+* Styling for order details page
+* Changed sign in page styling
 * Makes root path homes#index
+January 17, 2015:
+* Added styling to many pages
+January 19th:
+* Gon Gem for javascript variable passing
+* Chart.js for Bar graph of all
+January 20th:
+* Overhauled splash page design and styling
+* Updated README.md with more information

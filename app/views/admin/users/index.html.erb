@@ -5,10 +5,10 @@
       <thead>
         <tr>
           <th width="200">Email</th>
-          <th>Name</th>
+          <th width="100">Name</th>
           <th width="150">Sign Up Date</th>
-          <th>Details</th>
-          <th>Delete</th>
+          <th width="100">Details</th>
+          <th width="100">Delete</th>
         </tr>
       </thead>
       <tbody>
@@ -17,12 +17,10 @@
           <td><%= user.email %></td>
           <td><%= user.first_name %> <%= user.last_name %> </td>
           <td><%= user.created_at.strftime("%m/%d/%Y") %></td>
-          <td><%= link_to "Details", admin_user_path(user),
-                  class: "button info small",
+          <td><%= link_to image_tag("info.svg", size: "20x10", class: "tableicon"), admin_user_path(user),
                   id: user.id %></td>
-          <td><%= link_to "Delete User", admin_user_path(user),
+          <td><%= link_to image_tag("trash.svg", size: "20x10", class: "tableicon"), admin_user_path(user),
                   method: :delete,
-                  class: "button small warning",
                   id: "delete#{user.id}",
                   data: { confirm: "Are you sure?"} %> </td>
         </tr>

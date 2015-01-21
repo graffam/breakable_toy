@@ -10,6 +10,7 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'foundation-rails'
 gem 'gon'
+gem 'kaminari'
 
 group :development, :test do
   gem 'pry'
@@ -22,6 +23,7 @@ group :development, :test do
   gem 'factory_girl'
   gem 'valid_attribute'
   gem 'shoulda-matchers', require: false
+  gem 'rack-mini-profiler'
 end
 
 group :test do

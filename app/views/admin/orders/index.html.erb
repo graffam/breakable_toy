@@ -4,7 +4,7 @@
       <thead>
         <tr>
           <th width="200">Machine</th>
-          <th width="100">Status</th>
+          <th width="300">Status</th>
           <th width="150">Due Date</th>
           <th width="500">Date Created</th>
           <th width="400">Orderd By</th>
@@ -35,5 +35,10 @@
         <% end %>
       </tbody>
     </table>
+  </div>
+</div>
+<div class="row">
+  <div class="small-3 small-centered columns">
+    <%= paginate @orders %>
   </div>
 </div>

@@ -24,8 +24,8 @@
             <% else %>
               <td>None</td>
             <% end %>
-            <td><%= link_to "Details", order_path(order),
-                    class: "button", id: order.id %></td>
+            <td><%= link_to image_tag("info.svg", size: "20x10", class: "tableicon"), order_path(order),
+                    id: order.id %></td>
           </tr>
         <% end %>
       <% end %>

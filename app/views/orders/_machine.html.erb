@@ -1,5 +1,11 @@
-<h1>Pick a Machine</h1>
+<p>Pick a Machine</p>
+<div class="row">
   <%= form_tag(new_order_path, method: "get") do %>
+  <div class="6-small columns">
     <%= collection_select(:machine, :id, Machine.all, :id, :name) %>
-    <%= submit_tag "Submit" %>
-  <% end %>
+  </div>
+  <div class="6-small columns">
+    <%= submit_tag "Submit", class: "button" %>
+  </div>
+<% end %>
+</div>

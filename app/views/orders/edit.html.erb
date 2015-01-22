@@ -1,58 +1,62 @@
-<div class="row add-top">
+<div class="row">
   <%= form_for(@order) do |f| %>
   <div class="small-12 columns">
     <fieldset>
       <legend>Order Details</legend>
       <div class="row">
-        <div class="small-6 columns edit">
-          <p class="infolabel edit">Machine</p>
-          <%= @order.machine.name %>
+        <div class="small-6 columns info user">
+          <div class="user">Machine</div>
+          <div>
+            <%= @order.machine.name %>
+          </div>
         </div>
-        <div class="small-6 columns edit">
-            <%= f.label :status , class: "edit" %>
-            <%= f.select(:status, [["In Progress", "In Progress"],["Done", "Done"],["To Do", "To Do"]]) %>
+        <div class="small-6 columns info user">
+          <%= f.label :status , class: "user" %>
+          <%= f.select(:status, [["In Progress", "In Progress"],["Done", "Done"],["To Do", "To Do"]])%>
         </div>
       </div>
       <div class="row">
-        <div class="small-6 columns edit">
-          <div class="infolabel edit">
+        <div class="small-6 columns info user">
+          <div class="user">
             Placed By
           </div>
           <% if @order.user != nil %>
-            <p class="edit"> <%= @order.user.first_name %><p>
+          <div class="user">
+            <%= @order.user.first_name %>
+          </div>
           <% else %>
             None
           <% end %>
         </div>
-        <div class="small-6 columns edit">
-          <%= f.label :needed_by, class: "edit" %>
-          <%= f.date_field :needed_by, class: "edit" %>
+        <div class="small-6 columns info user">
+          <%= f.label :needed_by, class: "user" %>
+          <%= f.date_field :needed_by, class: "user" %>
         </div>
       </div>
       <div class="row">
-        <div class="small-12 columns info">
-          <%= f.label :comment, class: "infolabel edit" %>
-          <%= f.text_area :comment %>
+        <div class="small-12 columns info user">
+          <%= f.label :comment, class: "user" %>
+          <%= f.text_area :comment, class:"user" %>
         </div>
       </div>
       <div class="row">
-        <div class="small 1 columns end info infolabel">
+        <div class="small 1 columns end info user">
           Kits
         </div>
         <div class="small-10 small-centered columns info">
           <table class="tablesorter">
             <thead class="info">
               <tr>
-                <th class="infolabel" width="200">Kit</th>
-                <th class="infolabel" width="200">Amount</th>
-                <th class="infolabel" width="200">Lot #'s</th>
+                <th class="infolabel user" width="200">Kit</th>
+                <th class="infolabel user" width="200">Amount</th>
+                <th class="infolabel user" width="200">Lot #'s</th>
               </tr>
             </thead>
             <tbody>
               <%= f.fields_for :kit_orders, @order.kit_orders do |ff| %>
                 <tr>
-                  <td><%= ff.label :name, ff.object.name %></td>
-                  <td><%= ff.label :amount, ff.object.amount %></td>
+                  <td><%= ff.label :name, ff.object.name, class: "user" %></td>
+                  <td><%= ff.label :amount, ff.object.amount, class:"user" %></td>
                   <td><%= ff.text_area :lot_numbers %></td>
                 </tr>
               <% end %>

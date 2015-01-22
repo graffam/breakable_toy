@@ -4,63 +4,73 @@
       <legend>Order Details</legend>
       <div class="row">
         <div class="small-6 columns info">
-          <div class="infolabel">
+          <div class="user">
             Machine
           </div>
-          <%= @order.machine.name %>
+          <div class="user">
+            <%= @order.machine.name %>
+          </div>
         </div>
         <div class="small-6 columns info">
-          <div class="infolabel">
+          <div class="user">
             Status
           </div>
-          <%= @order.status %>
+          <div class="user">
+            <%= @order.status %>
+          </div>
         </div>
       </div>
       <div class="row">
         <div class="small-6 columns info">
-          <div class="infolabel">
+          <div class="user">
             Placed By
           </div>
+          <div class="user">
             <% if @order.user != nil %>
               <%= @order.user.first_name %>
             <% else %>
               None
             <% end %>
+          </div>
         </div>
         <div class="small-6 columns info">
-          <div class="infolabel">
+          <div class="user">
             Date Needed
           </div>
-          <%= @order.needed_by.strftime("%m/%d/%Y") %>
+          <div class="user">
+            <%= @order.needed_by.strftime("%m/%d/%Y") %>
+          </div>
         </div>
       </div>
       <div class="row">
         <div class="small-12 columns info">
-          <div class="infolabel">
+          <div class="user">
             Comments
           </div>
-          <%= @order.comment %>
+          <div class="user">
+            <%= @order.comment %>
+          </div>
         </div>
       </div>
       <div class="row">
-        <div class="small 1 columns end info infolabel">
+        <div class="small 1 columns end user">
           Kits
         </div>
-        <div class="small-10 small-centered columns info">
+        <div class="small-10 small-centered columns user">
           <table class="tablesorter">
-            <thead class="info">
+            <thead class="user">
               <tr>
-                <th class="infolabel" width="200">Kit</th>
-                <th class="infolabel" width="200">Amount</th>
-                <th class="infolabel" width="200">Lot #'s</th>
+                <th class="infolabel user" width="200">Kit</th>
+                <th class="infolabel user" width="200">Amount</th>
+                <th class="infolabel user" width="200">Lot #'s</th>
               </tr>
             </thead>
             <tbody>
               <% @kit_orders.each do |kit_order| %>
               <tr>
-                <td><%= kit_order.name %></td>
-                <td><%= kit_order.amount %></td>
-                <td><%= kit_order.lot_numbers %></td>
+                <td class="user"><%= kit_order.name %></td>
+                <td class="user"><%= kit_order.amount %></td>
+                <td class="user"><%= kit_order.lot_numbers %></td>
               </tr>
               <% end %>
             </tbody>

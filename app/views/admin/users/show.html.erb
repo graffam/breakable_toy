@@ -1,8 +1,33 @@
-<h1>User Information</h1>
-<ul>
-  <li>Name: <%= @user.first_name %> <%= @user.last_name %></li>
-  <li>Email: <%= @user.email %></li>
-  <li>Date Created: <%= @user.created_at.strftime("%m/%d/%Y") %></li>
-</ul>
-<%= link_to "Update User Information", edit_admin_user_path(@user), class: "button round" %>
-<%= link_to "Back", :back, class: "button info small" %>
+<div class="row">
+  <div class="small-12 columns">
+    <fieldset>
+      <legend class="user">User Details</legend>
+      <div class"row">
+        <div class="small-6 columns user">
+          Name:
+        </div>
+        <div class="small-6 columns user">
+          <%= @user.first_name %> <%= @user.last_name %>
+        </div>
+      </div>
+      <div class"row">
+        <div class="small-6 columns user">
+          Email:
+        </div>
+        <div class="small-6 columns user">
+          <%= @user.email %>
+        </div>
+      </div>
+      <div class"row user">
+        <div class="small-6 columns user">
+          Date Created:
+        </div>
+        <div class="small-6 columns user">
+          <%= @user.created_at.strftime("%m/%d/%Y") %>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+</div>
+
+<%= link_to "Update", edit_admin_user_path(@user), class: "button" %>

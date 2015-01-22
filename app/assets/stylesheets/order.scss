@@ -191,3 +191,15 @@
 .active {
   font-weight: bold !important;
 }
+
+.user {
+  font-family: $font-family;
+  font-color: black;
+  font-size: .8em;
+  text-transform: uppercase;
+  font-weight: 300;
+  letter-spacing: .5px;
+  padding-top: 0.4375rem;
+  padding-right: 0.875rem;
+  padding-bottom: 0.4375rem
+}

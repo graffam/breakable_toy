@@ -22,7 +22,7 @@ feature "admin updates a user", %{
 
       visit admin_user_path(user)
 
-      click_on "Update User Information"
+      click_on "Update"
 
       fill_in "Email", with: "new@email.com"
       fill_in "First name", with: "New"

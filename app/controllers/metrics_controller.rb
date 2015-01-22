@@ -1,7 +1,5 @@
 class MetricsController < ApplicationController
   def index
-    if !params[:query]
-      gon.data = Metric.prepare
-    end
+    gon.data = Metric.prepare(params[:format])
   end
 end

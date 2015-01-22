@@ -38,3 +38,33 @@
 input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0px 1000px $link-hover inset;
 }
+
+a.metric_link {
+  margin-bottom: 0;
+  &:hover {
+    background: $link-hover;
+  }
+}
+.metric{
+
+  &:hover {
+    background: $link-hover;
+  }
+  padding-top:0.4375rem;
+  padding-bottom:0.4375rem;
+  padding-left: 0.875rem;
+  font-family: $font-family;
+  font-color: black;
+  font-size: .8em;
+  text-transform: uppercase;
+  font-weight: 300;
+  letter-spacing: .5px;
+}
+
+#metrics{
+  padding-top: 0.875rem;
+}
+
+#header{
+  display: block;
+}

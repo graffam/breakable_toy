@@ -48,7 +48,7 @@ class OrdersController < ApplicationController
 
   def index
     authenticate_user!
-    @orders = Order.all.page(params[:page]).per(10)
+    @orders = Order.all.page(params[:page]).per(10).reverse_order
   end
 
   def edit

@@ -1,1 +1,34 @@
-<canvas id="myChart" width="400" height="400"></canvas>
+<fieldset>
+    <div class="row">
+      <div class="small-8 columns">
+        <canvas id="myChart" width="400" height="400"></canvas>
+      </div>
+      <div class="small-4 columns" id="metrics">
+        <div class="row">
+          <div class="metric">
+            <%= link_to "Today", metrics_path("today"), :class => is_active_metric?("today")%>
+          </div>
+        </div>
+        <div class="row">
+          <div class="metric">
+            <%= link_to "This Week", metrics_path("week"), class: is_active_metric?("week")%>
+          </div>
+        </div>
+        <div class="row">
+          <div class="metric">
+           <%= link_to "This Month", metrics_path("month"), class: is_active_metric?("month")%>
+          </div>
+        </div>
+        <div class="row">
+          <div class="metric">
+            <%= link_to "This Year", metrics_path("year"), class: is_active_metric?("year")%>
+          </div>
+        </div>
+        <div class="row">
+          <div class="metric">
+            <%= link_to "All", metrics_path("all"), class: is_active_metric?("all") %>
+          </div>
+        </div>
+      </div>
+    </div>
+</fieldset>

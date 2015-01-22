@@ -18,6 +18,9 @@ var $commentInput = $('#order_comment');
 var $kitDiv = $(".kitDiv");
 var $kitInput =$("#kit");
 
+var $metric = $(".metric");
+var $metric_link = $(".metric_link");
+
 var $user_email_field = $("#user_email");
 
 $costObjectDiv.on('mouseover', function() {

@@ -29,13 +29,13 @@
     </div>
     <div class="large-3 pull-9 columns">
       <ul class="side-nav">
-        <li><%= link_to "Orders", orders_path %></li>
-        <li><%= link_to "New Order", new_order_path %></li>
-        <li><%= link_to "Metrics", metrics_path %></li>
+        <li><%= link_to "Orders", orders_path, class: is_active?("orders","index")%></li>
+        <li><%= link_to "New Order", new_order_path, class: is_active?("orders","new") %></li>
+        <li><%= link_to "Metrics", metrics_path("all"), class: is_active?("metrics","index")%></li>
         <% if current_user != nil %>
           <% if current_user.role == "admin" %>
-          <li><%= link_to "Manage Orders", admin_orders_path %></li>
-          <li><%= link_to "Manage Users", admin_users_path %></li>
+          <li><%= link_to "Manage Orders", admin_orders_path, class: is_active?("admin/orders","index") %></li>
+          <li><%= link_to "Manage Users", admin_users_path, class: is_active?("admin/users","index")%></li>
         <% end %>
         <% end %>
         <%- if current_user -%>

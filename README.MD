@@ -30,35 +30,47 @@ January 11, 2015:
 * Added User authentication requirements for viewing and placing orders
 * Added model tests for orders
 
-January 12, 2015:
+January 12:
 * Added history to README
 * Moved reagent ordering forms into their own partial
 * Added tabled sorting with table-sort jquery library
 * Added cost objects table
 * Added basic CSS
 
-January 13, 2015:
+January 13:
 * Added error messages for creating an order
 * Added Updating Orders
 * Added lot numbers to kit_orders
 
-January 14, 2015:
+January 14:
 * Added Admin name space
 * Added Admin deleting and updating user accounts
 * Added Admin deleting orders
-January 15, 2015:
+
+January 15:
 * Added styled side navigation bar
 * Started work on styled ordering page
-January 16, 2015:
+
+January 16:
 * Finished styling of ordering page
 * Styling for order details page
 * Changed sign in page styling
 * Makes root path homes#index
-January 17, 2015:
+
+January 17:
 * Added styling to many pages
-January 19th:
+
+January 19:
 * Gon Gem for javascript variable passing
 * Chart.js for Bar graph of all
-January 20th:
+
+January 20:
 * Overhauled splash page design and styling
 * Updated README.md with more information
+
+January 21:
+* Added pagination to orders page and admin pages
+* Added several more date ranges for orders metrics
+* Added icons and styled tables
+* Navigation and metrics selections now are bold when on their respective pages
+* Added helper for determining current page

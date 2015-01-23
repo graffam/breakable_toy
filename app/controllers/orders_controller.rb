@@ -14,12 +14,7 @@ class OrdersController < ApplicationController
 
   def create
     authenticate_user!
-    kit_orders = params[:order][:kit_orders_attributes]
-    count = 0
-    kit_orders.each_value do |kit_order|
-      count += kit_order["amount"].to_i
-    end
-    if count > 0
+    if KitOrder.not_empty?(params[:order][:kit_orders_attributes])
       @order = Order.new(order_params)
       @order.user_id = current_user.id
       if @order.save
@@ -31,11 +26,7 @@ class OrdersController < ApplicationController
         render "new"
       end
     else
-      if order_params["comment"] = "" || order_params["needed_by"] = ""
-        @order = Order.create(order_params)
-      end
-      @errors = @order.errors.full_messages
-      @errors << "Fill in atleast one kit to be ordered"
+      @errors = Order.order_errors(order_params)
       render "new"
     end
   end

@@ -11,6 +11,7 @@ gem 'devise'
 gem 'foundation-rails'
 gem 'gon'
 gem 'kaminari'
+gem 'faker'
 
 group :development, :test do
   gem 'pry'

@@ -19,4 +19,17 @@ class KitOrder < ActiveRecord::Base
       end
     end
   end
+
+  def self.not_empty?(kit_order_attributes)
+    kit_orders = kit_order_attributes
+    count = 0
+    kit_orders.each_value do |kit_order|
+      count += kit_order["amount"].to_i
+    end
+    if count > 0
+      return true
+    else
+      return false
+    end
+  end
 end

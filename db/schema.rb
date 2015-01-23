@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20150117225428) do
   create_table "orders", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "comment"
-    t.date     "needed_by",                        null: false
+    t.datetime "needed_by",                        null: false
     t.string   "status",         default: "To Do", null: false
     t.datetime "created_at"
     t.datetime "updated_at"

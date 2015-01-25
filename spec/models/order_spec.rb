@@ -16,4 +16,5 @@ describe Order do
   it { should have_many :kit_orders }
   it { should have_many(:kits).through(:kit_orders) }
   it { should belong_to :cost_object }
+  it { should have_many(:kit_orders).dependent(:destroy) }
 end

@@ -74,3 +74,22 @@ January 21:
 * Added icons and styled tables
 * Navigation and metrics selections now are bold when on their respective pages
 * Added helper for determining current page
+
+January 22:
+* Adds links to metrics chart
+* Navigation menu now bold for current selection
+* Fixed ordering of orders, most recent now appears first
+* Added styling to the user details page
+* Made all fonts on each page matching
+* Styled devise error messages
+* Changed title to clean sheets
+
+January 23:
+* Refactored model for ordering kit_orders, now skinnier controller
+
+January 24:
+* Added test for deletion dependency of kit_orders and orders
+* Test passing for deletion dependency of kit_orders and orders
+
+January 25:
+* Updated README.MD

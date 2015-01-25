@@ -12,7 +12,8 @@ class Order < ActiveRecord::Base
   belongs_to :user
   belongs_to :machine
   belongs_to :cost_object
-  has_many :kit_orders
+  has_many :kit_orders,
+           dependent: :destroy
   has_many :kits, through: :kit_orders
   accepts_nested_attributes_for :kit_orders
 

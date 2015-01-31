@@ -1,14 +1,6 @@
 [![Build Status](https://travis-ci.org/graffam/breakable_toy.svg?branch=master)](https://travis-ci.org/graffam/breakable_toy) [![Code Climate](https://codeclimate.com/github/graffam/breakable_toy.png)](https://codeclimate.com/github/graffam/breakable_toy) [![Coverage Status](https://coveralls.io/repos/graffam/breakable_toy/badge.png)](https://coveralls.io/r/graffam/breakable_toy)
 
-
-
-Ruby version
-
-
-Configuration
-
-
-How to run the test suite
+Deployed Version: https://cleansheet.herokuapp.com/
 
 
 Deployment instructions:
